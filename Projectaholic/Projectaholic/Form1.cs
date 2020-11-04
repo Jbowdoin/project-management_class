@@ -26,6 +26,7 @@ namespace Projectaholic
             P_team.Text = "Enter  team members";
             P_risk.Text = "Enter list of risks and risk status";
             confirm.Text = "Enter";
+            Display.Text = "get prgect info";
         }
         //Your software should include the following set of functions.
         //A.A General section that allows the input of the following information:
@@ -43,32 +44,34 @@ namespace Projectaholic
         //2. Have a feature that allows the user to view the total expended hours by
         //requirements analysis, designing, coding, testing, project management(by
         //each of the requirement entered).
-        private void menu_toggle(int x) 
+        private void menu_toggle(int x)
         {
-            switch (x) 
+            switch (x)
             {
-                case -2:
-                    Project_info.Visible = false;
-                    Display.Visible = false;
-                    P_name.Visible = true;
-                    P_description.Visible = true;
-                    P_team.Visible = true;
-                    P_risk.Visible = true;
+                case -3://switch the the  out put desply menu
+                    General_section.Visible = false;
+                    Main_menu.Visible = false;
+                    confirm.Visible = true;
+                    Output.Visible = true;
+                    break;
+                case -2://switch the the  General_section menu
+
                     input.Visible = false;
                     confirm.Visible = false;
+                    Main_menu.Visible = false;
+                    General_section.Visible = true;
                     break;
-                case -1:
-                    P_name.Visible = false;
-                    P_description.Visible = false;
-                    P_team.Visible = false;
-                    P_risk.Visible = false;
+                case -1://switch the the  input menu
+                    General_section.Visible = false;
                     input.Visible = true;
                     confirm.Visible = true;
                     break;
-                case 0:
+                case 0://return to defalt
                     reset();
                     break;
-              case 1:
+
+                // add funtonality to the set funtions 
+                case 1:
                     set_ower();
                     break;
                 case 2:
@@ -82,40 +85,43 @@ namespace Projectaholic
                     break;
             }
         }
-        private void set_ower() 
+        private void set_ower()
         {
+             
             Owner = input.Text;
-            input.Text="";
+            input.Text = "";
         }
         private void set_Description()
         {
+            
             Description = input.Text;
             input.Text = "";
         }
         private void set_Team()
         {
+            //this sould be updated to use list or arrays to list members indivisuly
+           
             Team = input.Text;
             input.Text = "";
         }
         private void set_Risk()
         {
+            
             Risks = input.Text;
             input.Text = "";
         }
-        private void reset() 
+        private void reset()
         {
-            Project_info.Visible = true;
-            Display.Visible= true;
-            P_name.Visible = false;   
-            P_description.Visible = false;
-            P_team.Visible = false;
-            P_risk.Visible = false;
+            Header.Text = "What would you like to do ?";
+            Main_menu.Visible = true;
+            General_section.Visible = false;
             input.Visible = false;
             confirm.Visible = false;
             Output.Visible = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            Header.Text = "Enter the Owner's name:";
             choice = 1;//set name
             menu_toggle(-1);
         }
@@ -129,35 +135,48 @@ namespace Projectaholic
 
         private void Project_info_Click(object sender, EventArgs e)
         {
+
             menu_toggle(-2);
         }
 
         private void Display_Click(object sender, EventArgs e)
         {
             choice = 0;//reset the menu with the next click
-            menu_toggle(-2);
-            confirm.Visible = true;
-            Output.Visible = true;
+            menu_toggle(-3);
+
             Output.Text = "project manager\t" + Owner + "\nTeam\t" + Team + "\nHigh level description\n" + "\nList of risks and risk status\n" + Risks;
-           //not sure whay this is not making new lines.
+            //not sure whay this is not making new lines.
         }
+
+
 
         private void P_description_Click(object sender, EventArgs e)
         {
+            Header.Text = "Enter the project description:";
             choice = 2;
             menu_toggle(-1);
+
+
         }
 
         private void P_team_Click(object sender, EventArgs e)
         {
+            Header.Text = "Enter the team members:";
             choice = 3;
             menu_toggle(-1);
         }
 
         private void P_risk_Click(object sender, EventArgs e)
         {
+            Header.Text = "Enter the project risks :";
             choice = 4;
             menu_toggle(-1);
         }
+
+        private void Header_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

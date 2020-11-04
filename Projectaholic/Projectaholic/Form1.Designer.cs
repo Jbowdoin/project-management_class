@@ -38,6 +38,10 @@
             this.Project_info = new System.Windows.Forms.Button();
             this.Output = new System.Windows.Forms.TextBox();
             this.Display = new System.Windows.Forms.Button();
+            this.Main_menu = new System.Windows.Forms.GroupBox();
+            this.General_section = new System.Windows.Forms.GroupBox();
+            this.Main_menu.SuspendLayout();
+            this.General_section.SuspendLayout();
             this.SuspendLayout();
             // 
             // input
@@ -53,7 +57,7 @@
             // 
             // P_name
             // 
-            this.P_name.Location = new System.Drawing.Point(551, 354);
+            this.P_name.Location = new System.Drawing.Point(0, 19);
             this.P_name.Name = "P_name";
             this.P_name.Size = new System.Drawing.Size(200, 35);
             this.P_name.TabIndex = 1;
@@ -63,7 +67,7 @@
             // 
             // P_description
             // 
-            this.P_description.Location = new System.Drawing.Point(750, 354);
+            this.P_description.Location = new System.Drawing.Point(199, 19);
             this.P_description.Name = "P_description";
             this.P_description.Size = new System.Drawing.Size(200, 35);
             this.P_description.TabIndex = 2;
@@ -73,7 +77,7 @@
             // 
             // P_team
             // 
-            this.P_team.Location = new System.Drawing.Point(551, 395);
+            this.P_team.Location = new System.Drawing.Point(0, 60);
             this.P_team.Name = "P_team";
             this.P_team.Size = new System.Drawing.Size(200, 35);
             this.P_team.TabIndex = 3;
@@ -94,10 +98,11 @@
             this.Header.TabIndex = 4;
             this.Header.Text = "What would you like to do";
             this.Header.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Header.TextChanged += new System.EventHandler(this.Header_TextChanged);
             // 
             // P_risk
             // 
-            this.P_risk.Location = new System.Drawing.Point(750, 395);
+            this.P_risk.Location = new System.Drawing.Point(199, 60);
             this.P_risk.Name = "P_risk";
             this.P_risk.Size = new System.Drawing.Size(200, 35);
             this.P_risk.TabIndex = 5;
@@ -117,7 +122,7 @@
             // 
             // Project_info
             // 
-            this.Project_info.Location = new System.Drawing.Point(551, 354);
+            this.Project_info.Location = new System.Drawing.Point(0, 19);
             this.Project_info.Name = "Project_info";
             this.Project_info.Size = new System.Drawing.Size(200, 76);
             this.Project_info.TabIndex = 7;
@@ -140,7 +145,7 @@
             // 
             // Display
             // 
-            this.Display.Location = new System.Drawing.Point(750, 354);
+            this.Display.Location = new System.Drawing.Point(199, 19);
             this.Display.Name = "Display";
             this.Display.Size = new System.Drawing.Size(200, 76);
             this.Display.TabIndex = 9;
@@ -148,23 +153,45 @@
             this.Display.UseVisualStyleBackColor = true;
             this.Display.Click += new System.EventHandler(this.Display_Click);
             // 
+            // Main_menu
+            // 
+            this.Main_menu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Main_menu.Controls.Add(this.Project_info);
+            this.Main_menu.Controls.Add(this.Display);
+            this.Main_menu.Location = new System.Drawing.Point(551, 354);
+            this.Main_menu.Name = "Main_menu";
+            this.Main_menu.Size = new System.Drawing.Size(399, 101);
+            this.Main_menu.TabIndex = 10;
+            this.Main_menu.TabStop = false;
+            // 
+            // General_section
+            // 
+            this.General_section.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.General_section.Controls.Add(this.P_name);
+            this.General_section.Controls.Add(this.P_description);
+            this.General_section.Controls.Add(this.P_team);
+            this.General_section.Controls.Add(this.P_risk);
+            this.General_section.Location = new System.Drawing.Point(551, 354);
+            this.General_section.Name = "General_section";
+            this.General_section.Size = new System.Drawing.Size(399, 101);
+            this.General_section.TabIndex = 11;
+            this.General_section.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1469, 642);
-            this.Controls.Add(this.Display);
-            this.Controls.Add(this.Project_info);
+            this.Controls.Add(this.Main_menu);
             this.Controls.Add(this.confirm);
-            this.Controls.Add(this.P_risk);
+            this.Controls.Add(this.General_section);
             this.Controls.Add(this.Header);
-            this.Controls.Add(this.P_team);
-            this.Controls.Add(this.P_description);
-            this.Controls.Add(this.P_name);
             this.Controls.Add(this.input);
             this.Controls.Add(this.Output);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Main_menu.ResumeLayout(false);
+            this.General_section.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +209,8 @@
         private System.Windows.Forms.Button Project_info;
         private System.Windows.Forms.TextBox Output;
         private System.Windows.Forms.Button Display;
+        private System.Windows.Forms.GroupBox Main_menu;
+        private System.Windows.Forms.GroupBox General_section;
     }
 }
 
