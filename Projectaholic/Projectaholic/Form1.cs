@@ -26,7 +26,7 @@ namespace Projectaholic
             P_team.Text = "Enter  team members";
             P_risk.Text = "Enter list of risks and risk status";
             confirm.Text = "Enter";
-            Display.Text = "get prgect info";
+            Display.Text = "get project info";
         }
         //Your software should include the following set of functions.
         //A.A General section that allows the input of the following information:
