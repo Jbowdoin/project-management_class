@@ -190,6 +190,7 @@
             this.Controls.Add(this.Output);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Main_menu.ResumeLayout(false);
             this.General_section.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -200,7 +201,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox input;
-        private System.Windows.Forms.Button P_name;
+        private System.Windows.Forms.Button P_name; 
         private System.Windows.Forms.Button P_description;
         private System.Windows.Forms.Button P_team;
         private System.Windows.Forms.TextBox Header;

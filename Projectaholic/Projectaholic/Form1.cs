@@ -72,7 +72,7 @@ namespace Projectaholic
 
                 // add funtonality to the set funtions 
                 case 1:
-                    set_ower();
+                    set_owner();
                     break;
                 case 2:
                     set_Description();
@@ -85,7 +85,7 @@ namespace Projectaholic
                     break;
             }
         }
-        private void set_ower()
+        private void set_owner()
         {
              
             Owner = input.Text;
@@ -156,6 +156,11 @@ namespace Projectaholic
             choice = 2;
             menu_toggle(-1);
 
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 
