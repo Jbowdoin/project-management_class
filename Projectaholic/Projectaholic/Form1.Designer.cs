@@ -40,6 +40,8 @@
             this.Display = new System.Windows.Forms.Button();
             this.Main_menu = new System.Windows.Forms.GroupBox();
             this.General_section = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Main_menu.SuspendLayout();
             this.General_section.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             this.input.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.input.Size = new System.Drawing.Size(399, 235);
             this.input.TabIndex = 0;
+            this.input.TextChanged += new System.EventHandler(this.input_TextChanged);
             // 
             // P_name
             // 
@@ -124,7 +127,7 @@
             // 
             this.Project_info.Location = new System.Drawing.Point(0, 19);
             this.Project_info.Name = "Project_info";
-            this.Project_info.Size = new System.Drawing.Size(200, 76);
+            this.Project_info.Size = new System.Drawing.Size(200, 35);
             this.Project_info.TabIndex = 7;
             this.Project_info.Text = "button1";
             this.Project_info.UseVisualStyleBackColor = true;
@@ -147,7 +150,7 @@
             // 
             this.Display.Location = new System.Drawing.Point(199, 19);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(200, 76);
+            this.Display.Size = new System.Drawing.Size(200, 35);
             this.Display.TabIndex = 9;
             this.Display.Text = "button1";
             this.Display.UseVisualStyleBackColor = true;
@@ -156,6 +159,8 @@
             // Main_menu
             // 
             this.Main_menu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Main_menu.Controls.Add(this.button1);
+            this.Main_menu.Controls.Add(this.button2);
             this.Main_menu.Controls.Add(this.Project_info);
             this.Main_menu.Controls.Add(this.Display);
             this.Main_menu.Location = new System.Drawing.Point(551, 354);
@@ -176,6 +181,26 @@
             this.General_section.Size = new System.Drawing.Size(399, 101);
             this.General_section.TabIndex = 11;
             this.General_section.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 35);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(199, 60);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 35);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Clear";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -212,6 +237,8 @@
         private System.Windows.Forms.Button Display;
         private System.Windows.Forms.GroupBox Main_menu;
         private System.Windows.Forms.GroupBox General_section;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

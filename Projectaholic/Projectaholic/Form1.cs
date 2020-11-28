@@ -11,15 +11,23 @@ using System.IO;
 
 namespace Projectaholic
 {
+    //add our names here (not sure who is actuly working on it right now
+    /*
+     * Josh bowdoin
+     */
     public partial class Form1 : Form
     {
         //should probably make team into an array or list so we can sort out diffrent pepole.
         private string Owner, Description, Team, Risks;
+        private string file_name = "save_data.txt";
+        private StreamReader SR;
+        private StreamWriter SW;
         private int choice;
         public Form1()
         {
             InitializeComponent();
             reset();
+            load();
             Project_info.Text = "Set_Project";
             P_name.Text = "Enter project description";
             P_description.Text = "Enter manager name";
@@ -83,6 +91,31 @@ namespace Projectaholic
                 case 4:
                     set_Risk();
                     break;
+                
+            }
+        }
+        private void save() 
+        {
+            SW = new StreamWriter(file_name);
+            //add logic here
+
+            SW.Close();
+        }
+        private void load()
+        {// call this on start up
+            try 
+            {
+                SR = new StreamReader(file_name);
+                //add logic here
+
+                SR.Close();
+            }
+            catch 
+            {
+                if (SR != null) 
+                {
+                    SR.Close();//close the file should the try block fail early 
+                }
             }
         }
         private void set_owner()
@@ -112,6 +145,7 @@ namespace Projectaholic
         }
         private void reset()
         {
+            //reset the menu state 
             Header.Text = "What would you like to do ?";
             Main_menu.Visible = true;
             General_section.Visible = false;
@@ -121,14 +155,16 @@ namespace Projectaholic
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Header.Text = "Enter the Owner's name:";
-            choice = 1;//set name
+            //
+            Header.Text = "Enter the project description:";
+            choice = 2;
             menu_toggle(-1);
         }
 
         private void confirm_Click(object sender, EventArgs e)
         {
             //call the needed funtion from menu_toggle after the user has entered the text, then reset the menu
+            //this is called with each enter click
             menu_toggle(choice);
             menu_toggle(0);
         }
@@ -144,24 +180,42 @@ namespace Projectaholic
             choice = 0;//reset the menu with the next click
             menu_toggle(-3);
 
-            Output.Text = "project manager\t" + Owner + "\nTeam\t" + Team + "\nHigh level description\n" + "\nList of risks and risk status\n" + Risks;
-            //not sure whay this is not making new lines.
+            Output.Text = "project manager\t" + Owner + "\r\nTeam\t" + Team + "\r\nHigh level description\r\n"+ Description + "\r\nList of risks and risk status\r\n" + Risks;
+            // "\r\n" is needed for making new lines.
         }
 
 
 
         private void P_description_Click(object sender, EventArgs e)
         {
-            Header.Text = "Enter the project description:";
-            choice = 2;
+            
+            Header.Text = "Enter the Owner's name:";
+            choice = 1;//set name
             menu_toggle(-1);
-
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //ingnore but do not deleat
+        }
 
+        private void input_TextChanged(object sender, EventArgs e)
+        {
+            //ingnore but do not deleat
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {// clear out the data 
+            Owner = "";
+             Description = "";
+             Team = "";
+             Risks = "";
+    }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            save();// call on click
         }
 
         private void P_team_Click(object sender, EventArgs e)
@@ -180,7 +234,7 @@ namespace Projectaholic
 
         private void Header_TextChanged(object sender, EventArgs e)
         {
-
+            //ingnore but do not deleat
         }
     }
 }
