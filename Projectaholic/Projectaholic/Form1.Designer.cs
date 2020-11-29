@@ -39,9 +39,9 @@
             this.Output = new System.Windows.Forms.TextBox();
             this.Display = new System.Windows.Forms.Button();
             this.Main_menu = new System.Windows.Forms.GroupBox();
-            this.General_section = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.General_section = new System.Windows.Forms.GroupBox();
             this.Main_menu.SuspendLayout();
             this.General_section.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +50,7 @@
             // 
             this.input.AcceptsReturn = true;
             this.input.AcceptsTab = true;
+            this.input.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.input.Location = new System.Drawing.Point(551, 354);
             this.input.Multiline = true;
             this.input.Name = "input";
@@ -92,6 +93,7 @@
             // 
             this.Header.AcceptsReturn = true;
             this.Header.AcceptsTab = true;
+            this.Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Header.Location = new System.Drawing.Point(551, 313);
             this.Header.Multiline = true;
             this.Header.Name = "Header";
@@ -115,6 +117,7 @@
             // 
             // confirm
             // 
+            this.confirm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirm.Location = new System.Drawing.Point(551, 595);
             this.confirm.Name = "confirm";
             this.confirm.Size = new System.Drawing.Size(399, 35);
@@ -125,6 +128,7 @@
             // 
             // Project_info
             // 
+            this.Project_info.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Project_info.Location = new System.Drawing.Point(0, 19);
             this.Project_info.Name = "Project_info";
             this.Project_info.Size = new System.Drawing.Size(200, 35);
@@ -137,6 +141,7 @@
             // 
             this.Output.AcceptsReturn = true;
             this.Output.AcceptsTab = true;
+            this.Output.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Output.Location = new System.Drawing.Point(551, 354);
             this.Output.Multiline = true;
             this.Output.Name = "Output";
@@ -158,6 +163,7 @@
             // 
             // Main_menu
             // 
+            this.Main_menu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Main_menu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Main_menu.Controls.Add(this.button1);
             this.Main_menu.Controls.Add(this.button2);
@@ -168,19 +174,6 @@
             this.Main_menu.Size = new System.Drawing.Size(399, 101);
             this.Main_menu.TabIndex = 10;
             this.Main_menu.TabStop = false;
-            // 
-            // General_section
-            // 
-            this.General_section.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.General_section.Controls.Add(this.P_name);
-            this.General_section.Controls.Add(this.P_description);
-            this.General_section.Controls.Add(this.P_team);
-            this.General_section.Controls.Add(this.P_risk);
-            this.General_section.Location = new System.Drawing.Point(551, 354);
-            this.General_section.Name = "General_section";
-            this.General_section.Size = new System.Drawing.Size(399, 101);
-            this.General_section.TabIndex = 11;
-            this.General_section.TabStop = false;
             // 
             // button1
             // 
@@ -201,6 +194,20 @@
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // General_section
+            // 
+            this.General_section.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.General_section.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.General_section.Controls.Add(this.P_name);
+            this.General_section.Controls.Add(this.P_description);
+            this.General_section.Controls.Add(this.P_team);
+            this.General_section.Controls.Add(this.P_risk);
+            this.General_section.Location = new System.Drawing.Point(551, 354);
+            this.General_section.Name = "General_section";
+            this.General_section.Size = new System.Drawing.Size(399, 101);
+            this.General_section.TabIndex = 11;
+            this.General_section.TabStop = false;
             // 
             // Form1
             // 
