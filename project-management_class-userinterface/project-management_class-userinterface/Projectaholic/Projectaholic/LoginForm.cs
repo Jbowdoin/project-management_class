@@ -56,5 +56,22 @@ namespace Projectaholic
         {
 
         }
+
+        private void LogInButton_Click(object sender, EventArgs e)
+        {
+            // add valadation here
+
+
+            //code to load the login form 
+            //may add a funtion for this if we add to many forms 
+            //*********************************************
+            var frm = new MainForm();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
+            //**********************************************
+        }
     }
 }
