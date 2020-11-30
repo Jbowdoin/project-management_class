@@ -9,11 +9,17 @@ namespace Projectaholic
 {
     class AccountClass
     {
+        enum SecurityQuestionEnum
+        {
+
+        }
+
         string accountName;
         DateTime accountCreateDate;
         string accountLocation;
         string accountPassHash;
         string accountDescription;
+        SecurityQuestionEnum accountSecurityQuestion;
         string accountSecurityHash;
         List<ProjectClass> accountProjects;
 
@@ -42,7 +48,7 @@ namespace Projectaholic
         private static string GetHash(HashAlgorithm hashAlgo, string source)
         {
             byte[] data = hashAlgo.ComputeHash(Encoding.UTF8.GetBytes(source));
-            string hash = BitConverter.ToString(data, 0);
+            string hash = BitConverter.ToString(data, 0).Replace("-", "");
             return hash;
         }
 
