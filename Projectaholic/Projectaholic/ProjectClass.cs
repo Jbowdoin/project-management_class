@@ -32,12 +32,15 @@ namespace Projectaholic
         ProjStrLngLimits projNameLimit = new ProjStrLngLimits(3, 30);
         string projectDescription;
         ProjStrLngLimits projDescLimit = new ProjStrLngLimits(10, 400);
-        ManagerClass projectManager;
+        AccountClass projectManager;
         List<AccountClass> projectMembers;
         List<RiskClass> projectRisks;
         List<RequirementsClass> projectFunctReq;
         List<RequirementsClass> projectNonFunctReq;
         List<EffortClass> projectEfforts;
+
+
+        // PROPERTIES
 
         public string ProjectName
         {
@@ -71,9 +74,51 @@ namespace Projectaholic
             }
         }
 
+
+        // METHODS
+
         public ProjectClass(AccountClass manager, string name = "Untitled", string description = "Description is not provided.")
         {
 
         }
+        
+        public void AddUserToProject(AccountClass user)
+        {
+            projectMembers.Add(user);
+        }
+
+        public void RemoveUserFromProject(AccountClass user)
+        {
+            projectMembers.Remove(user);
+        }
+
+        public void AddRequirementsToProject(RequirementsClass requirements, bool TFunctFNonFunct)
+        {
+            List<RequirementsClass> requirementsList = TFunctFNonFunct ? projectFunctReq : projectNonFunctReq;
+            requirementsList.Add(requirements);
+        }
+
+        public void RemoveRequirementsFromProject(RequirementsClass requirements)
+        {
+            foreach (RequirementsClass r in projectFunctReq)
+            {
+                if (r.Equals(requirements))
+                {
+                    projectFunctReq.Remove(r);
+                    return;
+                }
+            }
+            foreach (RequirementsClass r in projectNonFunctReq)
+            {
+                if(r.Equals(requirements))
+                {
+                    projectNonFunctReq.Remove(r);
+                    return;
+                }
+            }
+        }
+
+
+
     }
 }
