@@ -26,8 +26,7 @@ namespace Projectaholic
             {
                 return false;
             }
-            RequirementsClass compareRequirement = requirement as RequirementsClass;
-            if (compareRequirement != null && compareRequirement.requirementsSimpleDesc.Equals(this.requirementsSimpleDesc))
+            if (requirement is RequirementsClass compareRequirement && compareRequirement.requirementsSimpleDesc.Equals(this.requirementsSimpleDesc))
             {
                 return true;
             }
