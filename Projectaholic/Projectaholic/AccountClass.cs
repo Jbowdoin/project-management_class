@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Projectaholic
 {
@@ -64,9 +65,46 @@ namespace Projectaholic
             }
         }
 
-        public static AccountClass Login(string username, string password)
+        public static AccountClass RegisterAccount(string name, string pass, SecurityQuestionEnum question, string answer, string location, string description)
         {
             throw new NotImplementedException();
+            return null;
+        }
+
+        public static AccountClass Login(string username, string password)
+        {
+            AccountClass loggedUser = null;
+            string sqlCommand = @"SELECT accountID, username, password FROM dbo.Accounts";
+            SqlConnection connection = new SqlConnection(SQLClass.GetSQLConnectionString());
+            SqlCommand command = new SqlCommand(sqlCommand, connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string checkUser = reader.GetString(1);
+                    if (checkUser.Equals(username))
+                    {
+                        string checkPass = reader.GetString(2);
+                        if (VerifyHash(SHA256.Create(), checkPass, password))
+                        {
+                            string location = reader.GetString(3);
+                            SecurityQuestionEnum question = (SecurityQuestionEnum)reader.GetInt32(4);
+                            string answer = reader.GetString(5);
+                            string description = reader.GetString(6);
+                            loggedUser = new AccountClass(checkUser, checkUser, question, answer, location, description);
+                            reader.Close();
+                            return loggedUser;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
             return null;
         }
 

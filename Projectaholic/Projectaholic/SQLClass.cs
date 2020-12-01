@@ -5,29 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Projectaholic
 {
     static class SQLClass
     {
+        public const string COMMAND_SELECT_ALL_FROM_TABLE = "SELECT * FROM {0}";
+        public const string COMMAND_SELECT_COLUMNS_FROM_TABLE = "SELECT {0} FROM {1}";
+
+
         public static string GetSQLConnectionString()
         {
             return ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
         }
 
-        public static T GetDataFromRequest<T>(string request)
+        public static DataSet GetDataFromSQL(string command, string tableName)
         {
-            T data;
-            using (SqlConnection connection = new SqlConnection(GetSQLConnectionString()))
-            {
-                using(SqlCommand command = new SqlCommand(request))
-                {
-                    connection.Open();
-                    var result = command.ExecuteScalar();
-                    data = (T)result;
-                }
-            }
-            return data;
+            DataSet returnData = new DataSet();
+            SqlConnection conn = new SqlConnection(GetSQLConnectionString());
+            SqlDataAdapter adapter = new SqlDataAdapter(command, conn);
+            conn.Open();
+            adapter.Fill(returnData, tableName);
+            conn.Close();
+            return returnData;
+        }
+
+        public static void UpdateDataToSQL(DataTable data, string command, string tableName)
+        {
+            throw new NotImplementedException();
         }
     }
 }
