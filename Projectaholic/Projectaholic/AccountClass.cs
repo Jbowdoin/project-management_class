@@ -50,6 +50,7 @@ namespace Projectaholic
                 accountDescription = "Description not given.";
                 accountLocation = "N/A";
                 accountCreateDate = DateTime.UtcNow;
+                accountProjects = null;
             }
         }
 
@@ -65,20 +66,65 @@ namespace Projectaholic
             }
         }
 
-        public static AccountClass RegisterAccount(string name, string pass, SecurityQuestionEnum question, string answer, string location, string description)
+        public static AccountClass RegisterAccount(string name, string pass, SecurityQuestionEnum question, string answer, string location, string description, ref bool IsWrongTUserFPass)
         {
-            throw new NotImplementedException();
-            return null;
+            AccountClass registeredUeser = null;
+            using (SqlConnection connection = new SqlConnection(SQLClass.GetSQLConnectionString()))
+            {
+                string selectQuery = @"SELECT accountID, username, password FROM dbo.Accounts";
+                string insertQuery =
+                    @"INSERT INTO dbo.Accounts (username, password, location, securityQuestion, securityAnswer, description) "
+                    + @"VALUES (@username, @password, @location, @securityQuestion, @securityAnswer, @description)";
+                SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
+                SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
+                insertCommand.Parameters.AddWithValue("@username", name);
+                insertCommand.Parameters.AddWithValue("@password", GetHash(SHA256.Create(), pass));
+                insertCommand.Parameters.AddWithValue("@location", location);
+                insertCommand.Parameters.AddWithValue("@securityQuestion", (int)question);
+                insertCommand.Parameters.AddWithValue("@securityAnswer", answer);
+                insertCommand.Parameters.AddWithValue("@description", description);
+
+                connection.Open();
+                SqlDataReader reader = selectCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string checkUser = reader.GetString(1);
+                        if (checkUser.Equals(name))
+                        {
+                            IsWrongTUserFPass = true;
+                            return null;
+                        }
+                        string checkPass = reader.GetString(2);
+                        if (VerifyHash(SHA256.Create(), checkPass, pass))
+                        {
+                            IsWrongTUserFPass = false;
+                            return null;
+                        }
+                    }
+                    reader.Close();
+
+                    int checkInsert = insertCommand.ExecuteNonQuery();
+                    if (checkInsert < 0)
+                    {
+                        throw new DataException();
+                    }
+                    registeredUeser = new AccountClass(name, pass, question, answer, location, description);
+                    return registeredUeser;
+
+                }
+                throw new DataException();
+            }
         }
 
         public static AccountClass Login(string username, string password)
         {
-            AccountClass loggedUser = null;
-            string sqlCommand = @"SELECT accountID, username, password FROM dbo.Accounts";
+            AccountClass loggedUser;
+            string sqlCommand = @"SELECT * FROM dbo.Accounts";
             SqlConnection connection = new SqlConnection(SQLClass.GetSQLConnectionString());
             SqlCommand command = new SqlCommand(sqlCommand, connection);
             connection.Open();
-
             SqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
             {
