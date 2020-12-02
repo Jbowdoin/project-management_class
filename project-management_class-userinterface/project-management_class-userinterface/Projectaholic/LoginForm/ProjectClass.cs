@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Projectaholic
 {
@@ -79,9 +81,30 @@ namespace Projectaholic
 
         public ProjectClass(AccountClass manager, string name = "Untitled", string description = "Description is not provided.")
         {
+            /*
+            using (SqlConnection connection = new SqlConnection(SQLClass.GetSQLConnectionString()))
+            {
+                string insertQuery =
+                    @"INSERT INTO dbo.Projects (manager, name, description) "
+                    + @"VALUES (@manager, @name, @description)";
+                SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
+                insertCommand.Parameters.AddWithValue("@manager", manager);
+                insertCommand.Parameters.AddWithValue("@name", name);
+                insertCommand.Parameters.AddWithValue("@description", description);
+
+
+                connection.Open();
+
+                    int checkInsert = insertCommand.ExecuteNonQuery();
+                    if (checkInsert < 0)
+                    {
+                        throw new DataException();
+                    }
+                   
+    
+                }*/
 
         }
-        
         public void AddUserToProject(AccountClass user)
         {
             projectMembers.Add(user);
