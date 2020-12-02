@@ -39,22 +39,26 @@ namespace Projectaholic
             this.Logout = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Clear = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
+            this.Input_group = new System.Windows.Forms.GroupBox();
+            this.Risks_Input = new System.Windows.Forms.TextBox();
+            this.Risks_label = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Team_Names_Input = new System.Windows.Forms.Label();
+            this.Owner_Name_Input = new System.Windows.Forms.TextBox();
+            this.Owner_Name_label = new System.Windows.Forms.Label();
+            this.Project_Name_input = new System.Windows.Forms.TextBox();
+            this.Project_Name_label = new System.Windows.Forms.Label();
             this.New = new System.Windows.Forms.Button();
             this.Remove = new System.Windows.Forms.Button();
             this.Edit = new System.Windows.Forms.Button();
             this.output = new System.Windows.Forms.TextBox();
             this.View = new System.Windows.Forms.Button();
-            this.Input_group = new System.Windows.Forms.GroupBox();
-            this.Project_Name_label = new System.Windows.Forms.Label();
-            this.Project_Name_input = new System.Windows.Forms.TextBox();
-            this.Owner_Name_Input = new System.Windows.Forms.TextBox();
-            this.Owner_Name_label = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Team_Names_Input = new System.Windows.Forms.Label();
-            this.Clear = new System.Windows.Forms.Button();
-            this.Save = new System.Windows.Forms.Button();
-            this.Risks_Input = new System.Windows.Forms.TextBox();
-            this.Risks_label = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainSideSplitContainer)).BeginInit();
             this.MainSideSplitContainer.Panel1.SuspendLayout();
@@ -199,6 +203,125 @@ namespace Projectaholic
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
+            // Clear
+            // 
+            this.Clear.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Clear.Location = new System.Drawing.Point(458, 528);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(430, 40);
+            this.Clear.TabIndex = 11;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = false;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
+            // Save
+            // 
+            this.Save.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Save.Location = new System.Drawing.Point(6, 528);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(430, 40);
+            this.Save.TabIndex = 10;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // Input_group
+            // 
+            this.Input_group.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Input_group.Controls.Add(this.textBox3);
+            this.Input_group.Controls.Add(this.label2);
+            this.Input_group.Controls.Add(this.textBox1);
+            this.Input_group.Controls.Add(this.label1);
+            this.Input_group.Controls.Add(this.Risks_Input);
+            this.Input_group.Controls.Add(this.Risks_label);
+            this.Input_group.Controls.Add(this.textBox2);
+            this.Input_group.Controls.Add(this.Team_Names_Input);
+            this.Input_group.Controls.Add(this.Owner_Name_Input);
+            this.Input_group.Controls.Add(this.Owner_Name_label);
+            this.Input_group.Controls.Add(this.Project_Name_input);
+            this.Input_group.Controls.Add(this.Project_Name_label);
+            this.Input_group.Location = new System.Drawing.Point(6, 9);
+            this.Input_group.Name = "Input_group";
+            this.Input_group.Size = new System.Drawing.Size(882, 410);
+            this.Input_group.TabIndex = 7;
+            this.Input_group.TabStop = false;
+            // 
+            // Risks_Input
+            // 
+            this.Risks_Input.Location = new System.Drawing.Point(285, 46);
+            this.Risks_Input.Multiline = true;
+            this.Risks_Input.Name = "Risks_Input";
+            this.Risks_Input.Size = new System.Drawing.Size(591, 255);
+            this.Risks_Input.TabIndex = 11;
+            // 
+            // Risks_label
+            // 
+            this.Risks_label.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Risks_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Risks_label.Location = new System.Drawing.Point(285, 7);
+            this.Risks_label.Name = "Risks_label";
+            this.Risks_label.Size = new System.Drawing.Size(591, 36);
+            this.Risks_label.TabIndex = 10;
+            this.Risks_label.Text = "List of risks";
+            this.Risks_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(3, 214);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(279, 87);
+            this.textBox2.TabIndex = 9;
+            // 
+            // Team_Names_Input
+            // 
+            this.Team_Names_Input.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Team_Names_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Team_Names_Input.Location = new System.Drawing.Point(3, 175);
+            this.Team_Names_Input.Name = "Team_Names_Input";
+            this.Team_Names_Input.Size = new System.Drawing.Size(279, 36);
+            this.Team_Names_Input.TabIndex = 8;
+            this.Team_Names_Input.Text = "Team Names";
+            this.Team_Names_Input.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Owner_Name_Input
+            // 
+            this.Owner_Name_Input.Location = new System.Drawing.Point(3, 135);
+            this.Owner_Name_Input.Multiline = true;
+            this.Owner_Name_Input.Name = "Owner_Name_Input";
+            this.Owner_Name_Input.Size = new System.Drawing.Size(279, 37);
+            this.Owner_Name_Input.TabIndex = 7;
+            // 
+            // Owner_Name_label
+            // 
+            this.Owner_Name_label.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Owner_Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Owner_Name_label.Location = new System.Drawing.Point(3, 96);
+            this.Owner_Name_label.Name = "Owner_Name_label";
+            this.Owner_Name_label.Size = new System.Drawing.Size(279, 36);
+            this.Owner_Name_label.TabIndex = 6;
+            this.Owner_Name_label.Text = "Owner Name";
+            this.Owner_Name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Project_Name_input
+            // 
+            this.Project_Name_input.Location = new System.Drawing.Point(3, 46);
+            this.Project_Name_input.Multiline = true;
+            this.Project_Name_input.Name = "Project_Name_input";
+            this.Project_Name_input.Size = new System.Drawing.Size(279, 47);
+            this.Project_Name_input.TabIndex = 5;
+            // 
+            // Project_Name_label
+            // 
+            this.Project_Name_label.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Project_Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Project_Name_label.Location = new System.Drawing.Point(3, 7);
+            this.Project_Name_label.Name = "Project_Name_label";
+            this.Project_Name_label.Size = new System.Drawing.Size(279, 36);
+            this.Project_Name_label.TabIndex = 4;
+            this.Project_Name_label.Text = "Project Name";
+            this.Project_Name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // New
             // 
             this.New.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -252,120 +375,44 @@ namespace Projectaholic
             this.View.UseVisualStyleBackColor = false;
             this.View.Click += new System.EventHandler(this.View_Click);
             // 
-            // Input_group
+            // textBox1
             // 
-            this.Input_group.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Input_group.Controls.Add(this.Risks_Input);
-            this.Input_group.Controls.Add(this.Risks_label);
-            this.Input_group.Controls.Add(this.textBox2);
-            this.Input_group.Controls.Add(this.Team_Names_Input);
-            this.Input_group.Controls.Add(this.Owner_Name_Input);
-            this.Input_group.Controls.Add(this.Owner_Name_label);
-            this.Input_group.Controls.Add(this.Project_Name_input);
-            this.Input_group.Controls.Add(this.Project_Name_label);
-            this.Input_group.Location = new System.Drawing.Point(6, 9);
-            this.Input_group.Name = "Input_group";
-            this.Input_group.Size = new System.Drawing.Size(882, 410);
-            this.Input_group.TabIndex = 7;
-            this.Input_group.TabStop = false;
+            this.textBox1.Location = new System.Drawing.Point(7, 356);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(430, 37);
+            this.textBox1.TabIndex = 13;
             // 
-            // Project_Name_label
+            // label1
             // 
-            this.Project_Name_label.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Project_Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Project_Name_label.Location = new System.Drawing.Point(0, 7);
-            this.Project_Name_label.Name = "Project_Name_label";
-            this.Project_Name_label.Size = new System.Drawing.Size(279, 36);
-            this.Project_Name_label.TabIndex = 4;
-            this.Project_Name_label.Text = "Project Name";
-            this.Project_Name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(430, 36);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Functional Requirements";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Project_Name_input
+            // textBox3
             // 
-            this.Project_Name_input.Location = new System.Drawing.Point(0, 46);
-            this.Project_Name_input.Multiline = true;
-            this.Project_Name_input.Name = "Project_Name_input";
-            this.Project_Name_input.Size = new System.Drawing.Size(279, 37);
-            this.Project_Name_input.TabIndex = 5;
+            this.textBox3.Location = new System.Drawing.Point(443, 356);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(430, 37);
+            this.textBox3.TabIndex = 15;
             // 
-            // Owner_Name_Input
+            // label2
             // 
-            this.Owner_Name_Input.Location = new System.Drawing.Point(0, 135);
-            this.Owner_Name_Input.Multiline = true;
-            this.Owner_Name_Input.Name = "Owner_Name_Input";
-            this.Owner_Name_Input.Size = new System.Drawing.Size(279, 37);
-            this.Owner_Name_Input.TabIndex = 7;
-            // 
-            // Owner_Name_label
-            // 
-            this.Owner_Name_label.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Owner_Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Owner_Name_label.Location = new System.Drawing.Point(0, 96);
-            this.Owner_Name_label.Name = "Owner_Name_label";
-            this.Owner_Name_label.Size = new System.Drawing.Size(279, 36);
-            this.Owner_Name_label.TabIndex = 6;
-            this.Owner_Name_label.Text = "Owner Name";
-            this.Owner_Name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(0, 214);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 87);
-            this.textBox2.TabIndex = 9;
-            // 
-            // Team_Names_Input
-            // 
-            this.Team_Names_Input.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Team_Names_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Team_Names_Input.Location = new System.Drawing.Point(0, 175);
-            this.Team_Names_Input.Name = "Team_Names_Input";
-            this.Team_Names_Input.Size = new System.Drawing.Size(279, 36);
-            this.Team_Names_Input.TabIndex = 8;
-            this.Team_Names_Input.Text = "Team Names";
-            this.Team_Names_Input.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Clear
-            // 
-            this.Clear.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Clear.Location = new System.Drawing.Point(458, 528);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(430, 40);
-            this.Clear.TabIndex = 11;
-            this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = false;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
-            // 
-            // Save
-            // 
-            this.Save.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Save.Location = new System.Drawing.Point(6, 528);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(430, 40);
-            this.Save.TabIndex = 10;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = false;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // Risks_Input
-            // 
-            this.Risks_Input.Location = new System.Drawing.Point(285, 46);
-            this.Risks_Input.Multiline = true;
-            this.Risks_Input.Name = "Risks_Input";
-            this.Risks_Input.Size = new System.Drawing.Size(591, 255);
-            this.Risks_Input.TabIndex = 11;
-            // 
-            // Risks_label
-            // 
-            this.Risks_label.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Risks_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Risks_label.Location = new System.Drawing.Point(285, 7);
-            this.Risks_label.Name = "Risks_label";
-            this.Risks_label.Size = new System.Drawing.Size(591, 36);
-            this.Risks_label.TabIndex = 10;
-            this.Risks_label.Text = "List of risks";
-            this.Risks_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(443, 317);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(430, 36);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Non-Functional Requirements";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -420,5 +467,9 @@ namespace Projectaholic
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.TextBox Risks_Input;
         private System.Windows.Forms.Label Risks_label;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -96,6 +96,11 @@ namespace Projectaholic
             Project_Name_input.Text="";
             Risks_Input.Text = "";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     //not needed?
