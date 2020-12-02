@@ -154,6 +154,11 @@ namespace Projectaholic
             return null;
         }
 
+        public void PopulateProjects()
+        {
+
+        }
+
         private static string GetHash(HashAlgorithm hashAlgo, string source)
         {
             byte[] data = hashAlgo.ComputeHash(Encoding.UTF8.GetBytes(source));
