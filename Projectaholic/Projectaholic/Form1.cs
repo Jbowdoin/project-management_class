@@ -14,6 +14,7 @@ namespace Projectaholic
     //add our names here (not sure who is actuly working on it right now
     /*
      * Josh bowdoin
+     * James Andersen
      */
     public partial class Form1 : Form
     {
